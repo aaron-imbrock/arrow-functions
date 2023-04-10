@@ -125,7 +125,7 @@ let objectLit = function() {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(objectLit());
+console.log(objectLit());
 
 
 let sumAndProduct = function(a, b) {
@@ -135,7 +135,7 @@ let sumAndProduct = function(a, b) {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(sumAndProduct(3, 9));
+console.log(sumAndProduct(3, 9));
 
 
 let message = function(name) {
@@ -143,7 +143,7 @@ let message = function(name) {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(message('Allie'));
+console.log(message('Allie'));
 
 
 let Student = function(name, age, hometown) {
@@ -156,7 +156,7 @@ let joe = new Student('Joe', 'Schmoe', 100);
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this code to break!
-// console.log(joe);
+console.log(joe);
 
 // TODO: After viewing the previous console.log(), return the code to a working state.
 
@@ -168,7 +168,7 @@ Student.prototype.greeting = function() {
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this method to break!
-// console.log(joe.greeting());
+console.log(joe.greeting());
 
 // TODO: After viewing the previous console.log(), return the code to a working state.
 
@@ -179,7 +179,7 @@ Student.courseName = function() {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(Student.courseName());
+console.log(Student.courseName());
 
 
 
@@ -190,17 +190,26 @@ Student.prototype.scope = function() {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// joe.scope();
+joe.scope();
 
 Student.prototype.scopeArrow = () => console.log(this);
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// joe.scopeArrow();
+joe.scopeArrow();
 
 // TODO: Write a COMMENT below to answer the following questions.
 // 1. What is "this" when joe.scope() is invoked?
-//
+
+//  When joe.scope() is invoked, `this` refers to the 'joe' object itself.
+//  That's because the method 'scope()' is being called on the 'joe' instance.
+//  In other words, `this` refers to the object that the method was called on.
+
 // 2. What is "this" when joe.scopeArrow() is invoked?
-//
+
+// Since `scopeArrow` is an arrow function, `this` refers to the global object.
+// In this case the arrow function is inheriting the `this` value from the global scope.
+
 // 3. Explain why "this" is different when an arrow function is used.
-//
+
+// Arrow funcitons don't have object bindings and instead inherit their `this` 
+// value from their surrounding scope. In this case `global` or `window`.
